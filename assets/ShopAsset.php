@@ -18,9 +18,12 @@ class ShopAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/font-awesome.min.css',
         'css/shop.css',
     ];
     public $js = [
+        'js/jquery.waypoints.min.js',
+        'js/ShopKK.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

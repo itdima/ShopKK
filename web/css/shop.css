@@ -1,5 +1,25 @@
-/* Для FOOTER
--------------------------------------------------- */
+/* ---------Карусель------------ */
+.carousel-inner{
+    text-align: center;
+    text-align: -webkit-center;
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    height: 300px;
+}
+
+.carousel-control{
+    color: #D2D5D6;
+}
+
+.carousel-control:hover, .carousel-control:focus {
+    color: #D2D5D6;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important;
+}
+
+/* ---------FOOTER------------ */
 html {
     position: relative;
     min-height: 100%;
@@ -13,7 +33,7 @@ body {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 30px;
+    height: 65px;
     background-color: #f5f5f5;
 }
 
@@ -29,11 +49,53 @@ body > .container {
     padding-left: 15px;
 }
 
+#socseti i {
+    font-size: 1.5em;
+}
+#socseti div.btn-default {
+    height:100%;
+    border-radius: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 code {
     font-size: 80%;
 }
-/* Для Корзины
--------------------------------------------------- */
+/* ----  Корзина  -------- */
 #cartlink {
     cursor: pointer;
 }
+/* ----  Меню каталога справа  -------- */
+.dropdown-menu-right a {
+    white-space: normal !important;
+}
+
+.dropdown-right{
+    width: 100% !important;
+}
+
+.dropdown-menu-right{
+    right: -250px !important;
+    top: 0px !important;
+    width: inherit !important;
+}
+
+.dropdown-menu-right img, .dropdown-menu-right .nav-header,.dropdown-menu-right .mega-more, .mega-menu-column a.list-group-item{
+    display: none;
+}
+
+.list-group > li{
+    list-style-type: none;
+}
+
+.dropdown-right .none-cat{
+    padding: 0px !important;
+    margin: 0px !important;
+    border: 0px !important;
+}
+
+.none {
+    display: none;
+}
+
