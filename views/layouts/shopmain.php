@@ -155,9 +155,7 @@ ShopAsset::register($this);
                     <?= $content ?>
 
             </div>
-
         </div>
-
     </div>
 
     <footer class="footer" id="footer">

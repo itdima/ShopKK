@@ -7,6 +7,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'defaultRoute' => 'shop',
+    'language' => 'ru-RU',
     'layout' => 'shopmain',
     'modules' => [
 

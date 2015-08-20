@@ -6,10 +6,11 @@
 $('[data-toggle="popover"]').popover();
 
 
-// закрепление навигации
-$('.breadcrumb, .template-slider').waypoint(function() {
-    $('#navigation').toggleClass('navbar-fixed-top');
 
+
+// закрепление панели навигации #navigation
+$('#navigation').waypoint(function() {
+    $('#navigation').toggleClass('navbar-fixed-top');
 });
 
 // меню каталога товаров справа
@@ -20,3 +21,5 @@ $(".dropdown").hover(
     function() {
         $('.dropdown-menu', this).fadeOut("fast");
     });
+
+//
