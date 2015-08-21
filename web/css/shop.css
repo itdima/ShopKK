@@ -1,3 +1,23 @@
+body {
+    font-size: 14px;
+    background-color: rgb(238,238,238);
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus{
+    background-color: rgba(149, 115, 157, 0.87);
+    border-color: rgba(149, 115, 157, 0.87);
+}
+
+a.topMenu {
+    color: #984B95;
+    text-decoration: none;
+}
+
+a.footer-a {
+    color: #333;
+}
+
+
 /* ---------Форма поиска тавара------------ */
 #searchSubmitButton {
     margin-bottom: 10px;
@@ -33,7 +53,7 @@ span.sale-icon {
 }
 
 .carousel-control.left, .carousel-control.right {
-    background-image: none !important;
+    --background-image: none !important;
 }
 
 /* ---------FOOTER------------ */

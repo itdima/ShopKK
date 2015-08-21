@@ -31,18 +31,31 @@ ShopAsset::register($this);
             <div id="logo" class="col-md-3 text-center">
                 <img src="<?= Yii::getAlias('@web') . '/images/your_logo.png' ?>" alt="K & K logo">
             </div>
+
             <div class="col-md-9">
                 <ul class="nav nav-pills pull-right">
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#userModal">
+                        <a class="topMenu" href="#" data-toggle="modal" data-target="#userModal">
                             <span class="glyphicon glyphicon-user"></span>
                             Войти в кабинет
                         </a>
                     </li>
                     <li role="presentation">
-                        <a href="#">
+                        <a class="topMenu" href="#">
                             <span class="glyphicon glyphicon-plus-sign"></span>
                             Регистрация
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a class="topMenu" href="#" data-toggle="modal" data-target="#userModal">
+                            <span class="glyphicon glyphicon-bookmark"></span>
+                            Отложенные товары (<span class="wishlistcount">0</span>)
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a class="topMenu" href="#">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            Сравнить (<span id="numcompare">0</span>)
                         </a>
                     </li>
                 </ul>
@@ -72,7 +85,7 @@ ShopAsset::register($this);
                         <a href="/" title="Домой"><span class="glyphicon glyphicon-home"></span></a>
                     </li>
                     <li class="">
-                        <a href="<?=Url::toRoute(['shop/catalog']);?>">Каталог</a>
+                        <a href="<?= Url::toRoute(['shop/catalog']); ?>">Каталог</a>
                     </li>
                     <li class="">
                         <a href="/">Акции и распродажи</a>
@@ -93,7 +106,7 @@ ShopAsset::register($this);
 
 
                     <li class="">
-                        <a href="<?=Url::toRoute(['shop/about']);?>">О нас</a>
+                        <a href="<?= Url::toRoute(['shop/about']); ?>">О нас</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right visible-lg visible-md">
@@ -105,8 +118,8 @@ ShopAsset::register($this);
                            data-original-title="" title="">
                             <span class="glyphicon glyphicon-shopping-cart"></span>
                         <span class="visible-lg-inline">товаров
-                            <span id="num" class="label label-info"><?=\Yii::$app->cart->getCount();?></span> на
-                        </span><span id="sum" class="label label-info"><?=\Yii::$app->cart->getCost();?></span>
+                            <span id="num" class="label label-info"><?= \Yii::$app->cart->getCount(); ?></span> на
+                        </span><span id="sum" class="label label-info"><?= \Yii::$app->cart->getCost(); ?></span>
                             <span class="rubznak">p&nbsp;&nbsp;</span>
                         </a>
                     </li>
@@ -120,39 +133,38 @@ ShopAsset::register($this);
 
 
             <!-- левое меню -->
-            <div class="col-md-3 sidebar col-xs-3 visible-lg visible-md">
-                <ul class="list-group" id="catalog-menu">
-                    <li class="list-group-item active">Каталог</li>
-                    <li class="dropdown dropdown-right">
-                        <a href="#" class="list-group-item">Платья</a>
-                        <ul class="dropdown-menu dropdown-menu-right" style="display: none;">
-                            <li class="template-menu-line">
-                                <a href="#">Длинные</a>
-                            </li>
-
-                            <li class="template-menu-line ">
-                                <a href="#">Короткие</a>
-                            </li>
-                        </ul>
+            <div class="col-md-3 sidebar col-xs-3">
+                <div class="list-group">
+                    <li class="list-group-item active">
+                        <h4 class="list-group-item-heading">Платья</h4>
                     </li>
-                    <li class="dropdown dropdown-right">
-                        <a href="#" class="list-group-item">Аксессуары</a>
+                    <a href="#" class="list-group-item">Длинные</a>
+                    <a href="#" class="list-group-item">Короткие</a>
+                    <a href="#" class="list-group-item">Коктейльные</a>
+                    <a href="#" class="list-group-item">Вечерние</a>
+                </div>
+                <div class="list-group">
+                    <li class="list-group-item active">
+                        <h4 class="list-group-item-heading">Аксессуары</h4>
                     </li>
-
-                </ul>
+                    <a href="#" class="list-group-item">Бижутерия</a>
+                    <a href="#" class="list-group-item">Сумки</a>
+                    <a href="#" class="list-group-item">Шарфы</a>
+                    <a href="#" class="list-group-item">Ремни</a>
+                </div>
             </div>
 
             <div class="col-md-9 col-xs-12 main">
 
 
-                    <?= Breadcrumbs::widget([
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                        'homeLink' => [
-                            'label' => 'Главная',
-                            'url' => Yii::getAlias('@web')
-                        ]
-                    ]) ?>
-                    <?= $content ?>
+                <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    'homeLink' => [
+                        'label' => 'Главная',
+                        'url' => Yii::getAlias('@web')
+                    ]
+                ]) ?>
+                <?= $content ?>
 
             </div>
         </div>
@@ -166,11 +178,12 @@ ShopAsset::register($this);
                     <div id="socseti" class="btn-group btn-group-sm ">
                         <div class="btn btn-default" rel="tooltip" title="Twitter" data-toggle="tooltip"
                              data-placement="top">
-                            <i class="fa fa-twitter"></i>
+                            <a class="footer-a" href="https://twitter.com"><i class="fa fa-twitter"></i></a>
                         </div>
                         <div title="ВКонтакте" rel="tooltip" data-toggle="tooltip" data-placement="top"
                              class="btn btn-default">
-                            <i class="fa fa-vk"></i>
+                            <a class="footer-a" href="http://vk.com/club43004231"><i class="fa fa-vk"></i></a>
+
                         </div>
                     </div>
                 </div>

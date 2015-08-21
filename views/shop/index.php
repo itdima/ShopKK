@@ -25,19 +25,19 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/1.jpg' ?>" alt="тест">
+                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/11.jpg' ?>" alt="тест">
                 <div class="carousel-caption">
                     <h1>Твое настроение</h1>
                 </div>
             </div>
             <div class="item">
-                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/2.jpg' ?>" alt="тест">
+                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/22.jpg' ?>" alt="тест">
                 <div class="carousel-caption">
                     <h1>Твои эмоции</h1>
                 </div>
             </div>
             <div class="item">
-                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/3.jpg' ?>" alt="тест">
+                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/33.jpg' ?>" alt="тест">
                 <div class="carousel-caption">
                     <h1>Твой стиль</h1>
                 </div>
