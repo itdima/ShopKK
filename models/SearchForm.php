@@ -27,7 +27,8 @@ class SearchForm extends Model
     {
         return [
             [['priceMin','priceMax','size'], 'number'],
-            [['priceMin'], 'default', 'value' => 123],
+            [['priceMin'], 'default', 'value' => 1],
+            [['priceMax'], 'default', 'value' => 10000],
 
         ];
     }

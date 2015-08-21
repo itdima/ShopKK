@@ -28,7 +28,7 @@ ShopAsset::register($this);
     <!-- Header -->
     <header class="container">
         <div class="row">
-            <div class="col-md-3 text-center">
+            <div id="logo" class="col-md-3 text-center">
                 <img src="<?= Yii::getAlias('@web') . '/images/your_logo.png' ?>" alt="K & K logo">
             </div>
             <div class="col-md-9">
@@ -72,7 +72,7 @@ ShopAsset::register($this);
                         <a href="/" title="Домой"><span class="glyphicon glyphicon-home"></span></a>
                     </li>
                     <li class="">
-                        <a href="<?=Url::toRoute(['shop/catalog']);?>">К покупкам</a>
+                        <a href="<?=Url::toRoute(['shop/catalog']);?>">Каталог</a>
                     </li>
                     <li class="">
                         <a href="/">Акции и распродажи</a>
@@ -105,8 +105,8 @@ ShopAsset::register($this);
                            data-original-title="" title="">
                             <span class="glyphicon glyphicon-shopping-cart"></span>
                         <span class="visible-lg-inline">товаров
-                            <span id="num" class="label label-info">0</span> на
-                        </span><span id="sum" class="label label-info">0</span>
+                            <span id="num" class="label label-info"><?=\Yii::$app->cart->getCount();?></span> на
+                        </span><span id="sum" class="label label-info"><?=\Yii::$app->cart->getCost();?></span>
                             <span class="rubznak">p&nbsp;&nbsp;</span>
                         </a>
                     </li>
@@ -149,7 +149,7 @@ ShopAsset::register($this);
                         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                         'homeLink' => [
                             'label' => 'Главная',
-                            'url' => 'index'
+                            'url' => Yii::getAlias('@web')
                         ]
                     ]) ?>
                     <?= $content ?>

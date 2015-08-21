@@ -3,7 +3,8 @@
 namespace app\models;
 
 use Yii;
-use CartPositionTrait;
+use yz\shoppingcart\CartPositionInterface;
+use yz\shoppingcart\CartPositionTrait;
 
 /**
  * This is the model class for table "products".
@@ -26,6 +27,25 @@ use CartPositionTrait;
  */
 class Products extends \yii\db\ActiveRecord implements CartPositionInterface
 {
+    use CartPositionTrait;
+
+    public function behaviors()
+    {
+        return [
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ]
+        ];
+    }
+
+    public function createModels(){
+        $this->price = 1000;
+        $this->save();
+
+        $this->attachImage(Yii::getAlias('@webroot') . '/images/dress/4/1.jpg');
+        $this->attachImage(Yii::getAlias('@webroot') . '/images/dress/4/2.jpg');
+        $this->attachImage(Yii::getAlias('@webroot') . '/images/dress/4/3.jpg');
+    }
     /**
      * @inheritdoc
      */
@@ -85,19 +105,5 @@ class Products extends \yii\db\ActiveRecord implements CartPositionInterface
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getImages()
-    {
-        return $this->hasMany(Images::className(), ['id_product' => 'id']);
-    }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCategory0()
-    {
-        return $this->hasOne(Category::className(), ['id' => 'category']);
-    }
 }

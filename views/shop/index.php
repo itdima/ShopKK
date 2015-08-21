@@ -19,22 +19,27 @@
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="<?= Yii::getAlias('@web') . '/images/1.jpg' ?>" alt="тест">
-
+                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/1.jpg' ?>" alt="тест">
                 <div class="carousel-caption">
-                    <h1>Прекрасное платье 1</h1>
+                    <h1>Твое настроение</h1>
                 </div>
             </div>
             <div class="item">
-                <img src="<?= Yii::getAlias('@web') . '/images/2.jpg' ?>" alt="тест">
-
+                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/2.jpg' ?>" alt="тест">
                 <div class="carousel-caption">
-                    <h1>Прекрасное платье 2</h1>
+                    <h1>Твои эмоции</h1>
+                </div>
+            </div>
+            <div class="item">
+                <img src="<?= Yii::getAlias('@web') . '/images/dress/main/3.jpg' ?>" alt="тест">
+                <div class="carousel-caption">
+                    <h1>Твой стиль</h1>
                 </div>
             </div>
         </div>
